@@ -1,0 +1,15 @@
+{
+  "system": {
+    "extensions": [
+      {
+        "name": "reserve",
+        "resolve": "extensions/reserve",
+        "enabled": true,
+        "priority": 10
+      }
+    ]
+  },
+  "checkout": {
+    "showShippingNote": true
+  }
+}

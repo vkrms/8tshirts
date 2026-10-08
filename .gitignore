@@ -1,0 +1,8 @@
+node_modules/
+.env
+.evershop/
+.log/
+media/
+extensions/*/dist/
+*.log
+.DS_Store

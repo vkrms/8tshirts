@@ -1,0 +1,7 @@
+{
+  "name": "reserve",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Lets visitors leave their email on the cart page to reserve the items."
+}

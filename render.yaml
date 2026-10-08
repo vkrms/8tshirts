@@ -1,0 +1,44 @@
+services:
+  - type: web
+    name: 8tshirts
+    runtime: node
+    # EverShop runs 3 Node processes (~550 MB idle), so the 512 MB free/starter
+    # instances are too small. 1 CPU / 2 GB ("standard") is the safe choice.
+    plan: standard
+    buildCommand: npm ci && npm run build
+    startCommand: npm run start
+    healthCheckPath: /
+    autoDeploy: true
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: NODE_VERSION
+        value: "22"
+      - key: SUPPRESS_NO_CONFIG_WARNING
+        value: "true"
+      - key: DB_HOST
+        sync: false
+      - key: DB_PORT
+        value: "5432"
+      - key: DB_NAME
+        sync: false
+      - key: DB_USER
+        sync: false
+      - key: DB_PASSWORD
+        sync: false
+      - key: DB_SSLMODE
+        value: require
+      - key: AWS_S3_ENDPOINT
+        sync: false
+      - key: AWS_S3_FORCE_PATH_STYLE
+        value: "false"
+      - key: AWS_REGION
+        value: auto
+      - key: AWS_BUCKET_NAME
+        sync: false
+      - key: AWS_ACCESS_KEY_ID
+        sync: false
+      - key: AWS_SECRET_ACCESS_KEY
+        sync: false
+      - key: AWS_S3_BASE_URL
+        sync: false
